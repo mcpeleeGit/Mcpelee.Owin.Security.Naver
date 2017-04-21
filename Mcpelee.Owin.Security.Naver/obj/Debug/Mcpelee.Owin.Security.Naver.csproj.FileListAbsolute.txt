@@ -1,0 +1,13 @@
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\obj\Debug\Mcpelee.Owin.Security.Naver.csproj.GenerateResource.Cache
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\obj\Debug\Mcpelee.Owin.Security.Naver.Resources.resources
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Mcpelee.Owin.Security.Naver.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Mcpelee.Owin.Security.Naver.pdb
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Microsoft.Owin.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Microsoft.Owin.Security.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Newtonsoft.Json.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Owin.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Microsoft.Owin.xml
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Microsoft.Owin.Security.xml
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\bin\Debug\Newtonsoft.Json.xml
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\obj\Debug\Mcpelee.Owin.Security.Naver.dll
+C:\DEV\WebSite\Mcpelee.Owin.Security.Naver\Mcpelee.Owin.Security.Naver\obj\Debug\Mcpelee.Owin.Security.Naver.pdb
