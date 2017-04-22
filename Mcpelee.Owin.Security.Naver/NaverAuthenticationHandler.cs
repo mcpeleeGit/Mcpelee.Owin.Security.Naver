@@ -24,7 +24,7 @@ namespace Mcpelee.Owin.Security.Naver
         private const string XmlSchemaString = "http://www.w3.org/2001/XMLSchema#string";
 
         private readonly ILogger _logger;
-        private readonly HttpClient _httpClient;
+        private HttpClient _httpClient;
 
         public NaverAuthenticationHandler(HttpClient httpClient, ILogger logger)
         {
@@ -80,25 +80,21 @@ namespace Mcpelee.Owin.Security.Naver
 
                 string requestPrefix = Request.Scheme + "://" + Request.Host;
                 string redirectUri = requestPrefix + Request.PathBase + Options.CallbackPath;
-
+               
                 string tokenRequest = "grant_type=authorization_code" +
-                    "&code=" + Uri.EscapeDataString(code) +
-                    "&redirect_uri=" + Uri.EscapeDataString(redirectUri) +
                     "&client_id=" + Uri.EscapeDataString(Options.AppId) +
-                    "&client_secret=" + Uri.EscapeDataString(Options.AppSecret);
-
+                    "&client_secret=" + Uri.EscapeDataString(Options.AppSecret) + 
+                    "&code=" + Uri.EscapeDataString(code) +
+                    "&redirect_uri=" + Uri.EscapeDataString(redirectUri);
+                _httpClient = new HttpClient(); //Clear ¡Ú
                 HttpResponseMessage tokenResponse = await _httpClient.GetAsync(Options.TokenEndpoint + "?" + tokenRequest, Request.CallCancelled);
                 tokenResponse.EnsureSuccessStatusCode();
                 string text = await tokenResponse.Content.ReadAsStringAsync();
-                //IFormCollection form = WebHelpers.ParseForm(text);
+
                 var form = JObject.Parse(text);
                 string accessToken = form["access_token"].Value<string>();
                 string expires = form["expires_in"].Value<string>();
                 string graphAddress = Options.UserInformationEndpoint + "?access_token=" + Uri.EscapeDataString(accessToken);
-                if (Options.SendAppSecretProof)
-                {
-                    graphAddress += "&appsecret_proof=" + GenerateAppSecretProof(accessToken);
-                }
                 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage graphResponse = await _httpClient.GetAsync(Options.UserInformationEndpoint, Request.CallCancelled);
                 graphResponse.EnsureSuccessStatusCode();
